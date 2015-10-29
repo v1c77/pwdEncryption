@@ -1,7 +1,8 @@
 # coding:utf-8
+from __future__ import print_function
+import sys
 __author__ = 'Administrator'
 
-import sys
 
 plain = raw_input("Please input your plain text: ")
 value = input("Please input your key: ")
@@ -9,7 +10,7 @@ value = input("Please input your key: ")
 try:
     value = int (value)
 except ValueError:
-    print 'Please input an intger!'
+    print('Please input an intger!')
     sys.exit()
 # ------------上面为加密法1
 
@@ -17,8 +18,8 @@ except ValueError:
 # a-> 97    z->122
 # A->65    Z->90
 
-print "",
-print "secret",
+
+print("secret:",end='')
 
 for letter in plain:
     "ansi_row 是没有进过任何处理的absi字符"
@@ -30,10 +31,10 @@ for letter in plain:
     # print 'ansi_new:' + str(ansi_sec),
     # 如果ansi_raw<65 或>90且还不是小写字母，那么说明他不是字母//->直接输出原内容
     if (ansi_row < 65 or ansi_row > 90) and letter.islower() == False:
-        print letter,
+        print(letter,end='')
         #如果小于97大于122 还不是大写字母，说明根本不是字母，不加密直接输出
     elif (ansi_row < 97 or ansi_row > 122) and letter.isupper() == False:
-        print letter,
+        print(letter,end='')
     #剩下的都是字母,如果是大写字母 且加密后ansi>90说明想或出界，此方法回到开头知道符合为止
     else:
         while letter.isupper() == True and ansi_sec > 90:
@@ -51,7 +52,7 @@ for letter in plain:
         while letter.islower() ==True and ansi_sec <97:
             ansi_sec = 26 + ansi_sec
 
-    print chr(ansi_sec),
+    print(chr(ansi_sec),end='')
 
 
 
