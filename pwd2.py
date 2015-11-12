@@ -6,9 +6,9 @@ def txtToPwd(txt):
     "加密"
     txt = txt.replace(' ','`') #替换空格
     s =(5 - len(txt)%5)%5
-    while s>0:
-        txt = txt + '^'
-        s = s - 1
+    # while s>0:
+    #     txt = txt + '^'
+    #     s = s - 1
 
     grp = re.findall(r'.{5}',txt)
 
