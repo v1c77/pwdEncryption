@@ -1,7 +1,7 @@
 # coding:utf-8
 from __future__ import print_function
 import sys
-__author__ = 'Administrator'
+__author__ = 'diaoshe'
 
 
 plain = raw_input("Please input your plain text: ")
