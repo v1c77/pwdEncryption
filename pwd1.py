@@ -68,6 +68,7 @@ print()
 true  = ''
 print("entire:",end='')
 
+src = 'I am Liming .'
 for letter2 in src:
     "ansi_row 是加密后的absi字符"
     ansi_srow = ord(letter2)
